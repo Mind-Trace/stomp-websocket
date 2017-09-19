@@ -23,7 +23,7 @@ export class Client<T extends WebSocket>
     public onreceive: (frame: Frame) => void;
     public onreceipt: (frame: Frame) => void;
     public connected: boolean;
-    public subscriptions = {};
+    public subscriptions: {[key: string]: (frame: Frame) => void} = {};
 
     // var now;
     private counter: number = 0;
@@ -178,7 +178,7 @@ export class Client<T extends WebSocket>
         return this._transmit('SEND', headers, body);
     }
 
-    public subscribe(destination: string, callback?, headers: IHeaders = {}): ISubscription
+    public subscribe(destination: string, callback?: (frame: Frame) => void, headers: IHeaders = {}): ISubscription
     {
         if (!headers.id) {
             headers.id = 'sub-' + this.counter++;
