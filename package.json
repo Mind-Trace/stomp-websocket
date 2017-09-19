@@ -1,6 +1,6 @@
 {
     "name": "@iclemens/stompts",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "author": "Ivar Clemens <post@ivarclemens.nl>",
     "contributors": ["Jeff Mesnil <jmesnil@gmail.com>"],
     "description": "STOMP for TypeScript apps",
