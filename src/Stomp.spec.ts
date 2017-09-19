@@ -3,12 +3,13 @@
 // Stomp.WebSocketClass = StompServerMock
 
 import {} from 'jasmine';
+import {Client} from './Client';
 import {Stomp} from './Stomp';
 import {StompServerMock} from './StompServerMock';
 
 describe('Stomp', () => {
     describe('', () => {
-        let client;
+        let client: Client<StompServerMock>;
 
         beforeEach((done) => {
             const ws = new StompServerMock('ws://mocked/stomp/server');
