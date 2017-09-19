@@ -147,7 +147,7 @@ export class Client<T extends WebSocket>
         };
 
         this.ws.onclose = () => {
-            const msg = 'Whoops! Lost connection to' + this.ws.url;
+            const msg = 'Whoops! Lost connection to ' + this.ws.url;
             this.doDebug(msg);
             this._cleanUp();
             return errorCallback ? errorCallback(msg) : void 0;
