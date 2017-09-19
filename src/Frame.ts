@@ -81,7 +81,7 @@ export class Frame
     public nack: (headers?: IHeaders) => void;
     public receipt: boolean;
 
-    constructor(public command: string, public headers: IHeaders = {}, private body: string = '')
+    constructor(public command: string, public headers: IHeaders = {}, public body: string = '')
     {
     }
 
